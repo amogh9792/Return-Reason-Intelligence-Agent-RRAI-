@@ -1,15 +1,3 @@
----
-
-# **Project Name**
-
-**Agentic Fitness Intelligence (AFI)**
-
-**Tagline:** *“Automated Market Insights & Product Recommendations for Fitness Brands using Agentic AI.”*
-
----
-
-# **README.md**
-
 ```markdown
 # Agentic Fitness Intelligence (AFI)
 
@@ -23,11 +11,11 @@ Agentic Fitness Intelligence (AFI) is an AI-powered project that automatically s
 
 This project leverages:
 
-- **Web scraping**: Flipkart and competitors (e.g., Decathlon)  
-- **Google Trends**: Track popularity of fitness products  
-- **Agentic AI (LLM)**: Generate trend insights, competitor gaps, and product recommendations  
-- **Data processing**: Merge and clean multiple data sources  
-- **Visualization**: Bar charts, horizontal rankings, and heatmaps for stakeholders  
+- **Web Scraping:** Flipkart and competitors (e.g., Decathlon)  
+- **Google Trends:** Track popularity of fitness products  
+- **Agentic AI (LLM):** Generate trend insights, competitor gaps, and product recommendations  
+- **Data Processing:** Merge and clean multiple data sources  
+- **Visualization:** Bar charts, horizontal rankings, and heatmaps for stakeholders  
 
 ---
 
@@ -83,7 +71,7 @@ git clone <your-repo-url>
 cd Agentic-Fitness-Intelligence
 ````
 
-2. Create virtual environment and install dependencies:
+2. Create a virtual environment and install dependencies:
 
 ```bash
 python -m venv venv_rrai
@@ -130,7 +118,16 @@ keywords = ["yoga mat", "dumbbell", "shaker", "skipping rope"]
 
 * **Add products:** Update LLM modules (`trend_analyzer.py`, `competitor_insight.py`, `product_recommender.py`) with new product keywords and recommendation strategies.
 
-* **Data sources:** You can add more competitors or e-commerce sites by creating new scrapers in `src/scraper/`.
+* **Data sources:** Add more competitors or e-commerce sites by creating new scrapers in `src/scraper/`.
+
+---
+
+## Future Enhancements
+
+* Interactive dashboard using **Streamlit** or **Dash**
+* Automatic daily or weekly trend updates
+* Export visualizations and reports as **PDFs**
+* Include price comparisons and competitor benchmarking
 
 ---
 
@@ -142,11 +139,7 @@ MIT License
 
 ---
 
-This README is **professional, comprehensive, and reusable** — it explains the project, installation, usage, and future enhancements clearly.  
+If you want, I can **also create a ready-to-use `requirements.txt`** that matches this project so anyone can install all dependencies in one go.  
 
----
-
-If you want, I can also **write a `requirements.txt`** file for this project so someone can install everything with one command.  
-
-Do you want me to do that?
+Do you want me to do that next?
 ```
