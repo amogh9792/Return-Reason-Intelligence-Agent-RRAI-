@@ -1,66 +1,110 @@
-import ollama
+# ==========================
+# RRAI Agentic AI Module
+# ==========================
+
 import json
-from datetime import datetime
 
-class RRAIAgent:
-    def __init__(self, tools):
-        self.tools = tools
-        self.memory = []
+# --------------------------
+# 1. Input Data
+# --------------------------
 
-    def think(self, msg):
-        prompt = f"""
-You are RRAI — Return Reason Intelligence Agent for an e-commerce brand.
+# Trend scores from Google Trends or scraped data
+trend_data = {
+    "Yoga Mat": 64,
+    "Dumbbell": 37,
+    "Skipping Rope": 50,
+    "Shaker Bottle": 50
+}
 
-Your goals:
-1. Analyse returns, complaints, competitor products, trends.
-2. Find root-cause.
-3. Suggest actions.
-4. Use the provided tools to collect missing information.
-5. Return a final, actionable recommendation.
+# Boldfit current inventory
+boldfit_inventory = ["Yoga Mat", "Dumbbell", "Shaker Bottle"]
 
-TOOLS AVAILABLE:
-{json.dumps(list(self.tools.keys()), indent=2)}
+# Complementary mapping (helps rank suggestions)
+complementary_map = {
+    "Yoga Mat": 1.0,
+    "Dumbbell": 0.8,
+    "Skipping Rope": 0.9,
+    "Shaker Bottle": 0.7,
+    "Resistance Bands": 0.9,
+    "Exercise Ball": 1.0,
+    "Jump Rope": 0.95
+}
 
-MEMORY:
-{json.dumps(self.memory[-5:], indent=2)}
+# Suggested new products for recommendation
+potential_products = ["Jump Rope", "Resistance Bands", "Exercise Ball"]
 
-USER MESSAGE:
-{msg}
+# Trend score for new products (can be estimated or scraped)
+trend_estimates = {
+    "Jump Rope": 50,
+    "Resistance Bands": 40,
+    "Exercise Ball": 55
+}
 
-If you need a tool, respond in JSON only:
-{{
-    "tool": "tool_name",
-    "input": "text to pass"
-}}
+# --------------------------
+# 2. Gap Analysis
+# --------------------------
 
-If not, respond with:
-{{
-    "final": "final answer"
-}}
-"""
+def identify_gaps(trending_products, inventory):
+    """Find trending products not yet in inventory"""
+    gaps = [p for p in trending_products if p not in inventory]
+    return gaps
 
-        return ollama.generate(model="llama3.1", prompt=prompt)["response"]
+trending_products = list(trend_data.keys()) + potential_products
+product_gaps = identify_gaps(trending_products, boldfit_inventory)
 
-    def run_tool(self, tool_name, tool_input):
-        output = self.tools[tool_name](tool_input)
-        self.memory.append({"tool": tool_name, "input": tool_input, "output": output})
-        return output
+# --------------------------
+# 3. Scoring & Prioritization
+# --------------------------
 
-    def chat(self, msg):
-        while True:
-            reply = self.think(msg)
+def calculate_priority_score(product):
+    """Score = trend_score * complementary_factor"""
+    score = 0
+    if product in trend_data:
+        score = trend_data[product] * complementary_map.get(product, 0.8)
+    elif product in trend_estimates:
+        score = trend_estimates[product] * complementary_map.get(product, 0.8)
+    return score
 
-            try:
-                j = json.loads(reply)
-            except:
-                return reply
+ranked_products = sorted(product_gaps, key=lambda x: calculate_priority_score(x), reverse=True)
 
-            # tool call
-            if "tool" in j:
-                result = self.run_tool(j["tool"], j["input"])
-                msg = f"Tool result:\n{result}"
-                continue
+# --------------------------
+# 4. Strategic Recommendations
+# --------------------------
 
-            # final response
-            if "final" in j:
-                return j["final"]
+strategy_map = {
+    "Yoga Mat": "Launch premium eco-friendly mats with instructional guides; high ROI expected.",
+    "Dumbbell": "Introduce adjustable sets or combos for home strength training.",
+    "Skipping Rope": "Bundle with beginner cardio guide; portable & affordable.",
+    "Shaker Bottle": "Market as part of nutrition & fitness bundle.",
+    "Jump Rope": "Focus on cardio trend; lightweight, portable, and easy to bundle.",
+    "Resistance Bands": "Promote for home workouts; offer tiered resistance sets.",
+    "Exercise Ball": "Supports yoga/core training; launch with instructional videos."
+}
+
+agentic_report = []
+
+for rank, product in enumerate(ranked_products, start=1):
+    agentic_report.append({
+        "Rank": rank,
+        "Product": product,
+        "Trend Score": trend_data.get(product, trend_estimates.get(product, 0)),
+        "Priority Score": round(calculate_priority_score(product), 2),
+        "Recommendation": strategy_map.get(product, "Explore product launch opportunities.")
+    })
+
+# --------------------------
+# 5. Output Report
+# --------------------------
+
+print("\n=== RRAI Agentic Recommendations ===\n")
+for item in agentic_report:
+    print(f"Rank {item['Rank']}: {item['Product']}")
+    print(f"  Trend Score: {item['Trend Score']}")
+    print(f"  Priority Score: {item['Priority Score']}")
+    print(f"  Recommendation: {item['Recommendation']}\n")
+
+# Optional: save to JSON
+with open("rrai_agentic_report.json", "w") as f:
+    json.dump(agentic_report, f, indent=4)
+
+print("Agentic report saved as 'rrai_agentic_report.json'")

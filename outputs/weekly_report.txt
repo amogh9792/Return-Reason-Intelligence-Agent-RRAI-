@@ -1,32 +1,55 @@
-=== TREND INSIGHTS ===
-Here is a summary of the data:
+=== FULLY AGENTIC TREND INSIGHTS ===
+Dumbbells - Trend Score: 50 | Insight: Stable interest
+Yoga Mat - Trend Score: 44 | Insight: Declining interest
+Skipping Rope - Trend Score: 50 | Insight: Stable interest
+Shaker Bottles - Trend Score: 50 | Insight: Stable interest
 
-**Fitness Equipment Trend Insights:**
+=== FULLY AGENTIC COMPETITOR GAPS ===
+Dumbbells - Gap: Opportunity to improve or differentiate product | Demand: Moderate
+Yoga Mat - Gap: Opportunity to improve or differentiate product | Demand: Low
+Skipping Rope - Gap: Opportunity to improve or differentiate product | Demand: Moderate
+Shaker Bottles - Gap: Opportunity to improve or differentiate product | Demand: Moderate
 
-1. **Yoga mats are currently very popular**, with a high trend score of 64, indicating significant interest and search volume.
-2. **Dumbbells have moderate growth**, with a trend score of 37, suggesting steady but not explosive interest in this category.
-3. **Skipping ropes and shaker bottles are gaining traction**, both scoring 50, which is roughly the average trend score among these four keywords.
+=== FULLY AGENTIC PRODUCT RECOMMENDATIONS ===
+Rank 1: Dumbbells
+  Trend Score: 50
+  Priority Score: 50.0
+  Recommendation: Launch premium adjustable sets, combo packs, or smart weights.
+  Demand Level: Moderate
 
-Note: These insights are based solely on the provided trend scores and do not imply any other information or context.
+Rank 2: Jump Rope
+  Trend Score: 50
+  Priority Score: 47.5
+  Recommendation: Cardio trend; lightweight and portable.
+  Demand Level: Moderate
 
-=== COMPETITOR GAPS ===
-Based on the trend score data, we can conclude that:
+Rank 3: Shaker Bottles
+  Trend Score: 50
+  Priority Score: 45.0
+  Recommendation: Bundle with protein powders; highlight premium design.
+  Demand Level: Moderate
 
-**High Demand Categories:**
+Rank 4: Resistance Bands
+  Trend Score: 50
+  Priority Score: 45.0
+  Recommendation: Portable home workout solution; tiered resistance sets.
+  Demand Level: Moderate
 
-* Yoga (yoga mat has a trend score of 64)
-* Home Fitness (dumbbell and shaker are both exercise equipment)
+Rank 5: Yoga Blocks
+  Trend Score: 50
+  Priority Score: 42.5
+  Recommendation: Support flexibility and yoga poses; useful accessory.
+  Demand Level: Moderate
 
-**Improvement or Launch Opportunities for Boldfit:**
+Rank 6: Yoga Mat
+  Trend Score: 44
+  Priority Score: 35.2
+  Recommendation: Eco-friendly, travel-friendly, or alignment-focused mats.
+  Demand Level: Low
 
-* Given the high demand for yoga-related products, Boldfit could improve its yoga mat selection or launch new yoga-related products.
-* Since dumbbells are already a popular product, Boldfit could focus on improving its existing dumbbell offerings or explore complementary products like dumbbell sets or accessories.
+Rank 7: Skipping Rope
+  Trend Score: 50
+  Priority Score: 35.0
+  Recommendation: Innovative ropes (weighted/digital tracking) to differentiate.
+  Demand Level: Moderate
 
-=== PRODUCT RECOMMENDATIONS ===
-Based on the trend data, here are three new product suggestions for Boldfit:
-
-1. **Jump Rope**: Given that skipping rope has a high trend score of 50, it's likely that people are interested in cardiovascular exercises and simple, low-cost equipment. A jump rope would be a natural fit.
-2. **Exercise Ball**: With yoga mat having the highest trend score of 64, it's clear that people are interested in flexibility and core strengthening exercises. An exercise ball (also known as a stability ball) is a complementary product that can help users improve their balance and engage their core muscles.
-3. **Resistance Bands**: Since dumbbell has a relatively high trend score of 37, people are likely looking for ways to work out at home or on-the-go without heavy equipment. Resistance bands are lightweight, portable, and versatile, making them an attractive option for Boldfit.
-
-These products cater to the existing interest in fitness and exercise, while offering something new and complementary to the existing product line.

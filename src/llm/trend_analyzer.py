@@ -1,23 +1,34 @@
-import ollama
+# src/llm/trend_analyzer.py
 
-def analyze_trends(df):
-    # Only keyword + trend_score
-    items = (
-        df[['keyword', 'trend_score']]
-        .dropna()
-        .to_string(index=False)
-    )
+def analyze_trends(merged_df):
+    trend_insights = []
 
-    prompt = f"""
-You are a fitness market analyst for Boldfit.
+    products = ["dumbbells", "yoga mat", "skipping rope", "shaker bottles"]
 
-Using ONLY this data:
-{items}
+    for product in products:
+        product_lower = product.lower()
 
-Create a clean summary with:a
-- 3 trend insights (based only on trend_score)
-Avoid hallucinations. Do not invent brands or features.
-"""
+        # Filter merged_df by keyword
+        product_rows = merged_df[merged_df['keyword'] == product_lower]
 
-    res = ollama.generate(model="llama3.1", prompt=prompt)
-    return res["response"]
+        if not product_rows.empty:
+            # Take mean trend_score if multiple rows
+            trend_score = int(product_rows['trend_score'].mean())
+        else:
+            trend_score = 50  # default estimate
+
+        # Insight based on trend score
+        if trend_score >= 60:
+            insight = "Strong and rising interest"
+        elif trend_score >= 50:
+            insight = "Stable interest"
+        else:
+            insight = "Declining interest"
+
+        trend_insights.append({
+            "Product": product.title(),
+            "Trend Score": trend_score,
+            "Insight": insight
+        })
+
+    return trend_insights

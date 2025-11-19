@@ -1,0 +1,101 @@
+{
+    "trend_insights": [
+        {
+            "Product": "Dumbbells",
+            "Trend Score": 50,
+            "Insight": "Stable interest"
+        },
+        {
+            "Product": "Yoga Mat",
+            "Trend Score": 44,
+            "Insight": "Declining interest"
+        },
+        {
+            "Product": "Skipping Rope",
+            "Trend Score": 50,
+            "Insight": "Stable interest"
+        },
+        {
+            "Product": "Shaker Bottles",
+            "Trend Score": 50,
+            "Insight": "Stable interest"
+        }
+    ],
+    "competitor_gaps": [
+        {
+            "Product": "Dumbbells",
+            "Trend Score": 50,
+            "Gap Description": "Opportunity to improve or differentiate product",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Yoga Mat",
+            "Trend Score": 44,
+            "Gap Description": "Opportunity to improve or differentiate product",
+            "Demand Level": "Low"
+        },
+        {
+            "Product": "Skipping Rope",
+            "Trend Score": 50,
+            "Gap Description": "Opportunity to improve or differentiate product",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Shaker Bottles",
+            "Trend Score": 50,
+            "Gap Description": "Opportunity to improve or differentiate product",
+            "Demand Level": "Moderate"
+        }
+    ],
+    "product_recommendations": [
+        {
+            "Product": "Dumbbells",
+            "Trend Score": 50,
+            "Priority Score": 50.0,
+            "Recommendation": "Launch premium adjustable sets, combo packs, or smart weights.",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Jump Rope",
+            "Trend Score": 50,
+            "Priority Score": 47.5,
+            "Recommendation": "Cardio trend; lightweight and portable.",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Shaker Bottles",
+            "Trend Score": 50,
+            "Priority Score": 45.0,
+            "Recommendation": "Bundle with protein powders; highlight premium design.",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Resistance Bands",
+            "Trend Score": 50,
+            "Priority Score": 45.0,
+            "Recommendation": "Portable home workout solution; tiered resistance sets.",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Yoga Blocks",
+            "Trend Score": 50,
+            "Priority Score": 42.5,
+            "Recommendation": "Support flexibility and yoga poses; useful accessory.",
+            "Demand Level": "Moderate"
+        },
+        {
+            "Product": "Yoga Mat",
+            "Trend Score": 44,
+            "Priority Score": 35.2,
+            "Recommendation": "Eco-friendly, travel-friendly, or alignment-focused mats.",
+            "Demand Level": "Low"
+        },
+        {
+            "Product": "Skipping Rope",
+            "Trend Score": 50,
+            "Priority Score": 35.0,
+            "Recommendation": "Innovative ropes (weighted/digital tracking) to differentiate.",
+            "Demand Level": "Moderate"
+        }
+    ]
+}
